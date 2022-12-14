@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './views/home/home.component'
-import { HeroiCrudComponent } from './views/heroi-crud/heroi-crud.component'
-import { HeroiCreateComponent } from './components/heroi/heroi-create/heroi-create.component' 
-
+import { HomeComponent } from './views/home/home.component';
+import { HeroiCrudComponent } from './views/heroi-crud/heroi-crud.component';
+import { HeroiCreateComponent } from './components/heroi/heroi-create/heroi-create.component' ;
+import { HeroiUpdateComponent } from './components/heroi/heroi-update/heroi-update.component';
+import { HeroiDeleteComponent } from './components/heroi/heroi-delete/heroi-delete.component';
 
 const routes: Routes = [{
   path: "",
@@ -15,6 +16,12 @@ const routes: Routes = [{
 }, {
   path: "herois/create",
   component: HeroiCreateComponent
+}, {
+  path: "herois/update/:id",
+  component: HeroiUpdateComponent
+}, {
+  path: "herois/delete/:id",
+  component: HeroiDeleteComponent
 }];
 
 @NgModule({

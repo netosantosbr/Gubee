@@ -1,0 +1,35 @@
+<mat-card class="card">
+    <mat-card-title>Deletar herói</mat-card-title>
+    <form>
+        <mat-form-field class="field">
+            <input matInput placeholder="Nome" name="name" value="{{ hero.name }}" disabled>
+        </mat-form-field>
+        <mat-form-field class="field">
+            <input matInput placeholder="Raça" name="race" value="{{ hero.race }}" disabled>
+        </mat-form-field>
+        <section>
+            <mat-form-field class="field">
+                <input matInput placeholder="Força (min: 0 / max: 10)" name="strength" value="{{ hero.strength }}" disabled>
+            </mat-form-field>
+            <mat-form-field class="field">
+                <input matInput placeholder="Agilidade (min: 0 / max: 10)" name="agility" value="{{ hero.agility }}" disabled>
+            </mat-form-field>
+            <mat-form-field class="field">
+                <input matInput placeholder="Destreza (min: 0 / max: 10)" name="dexterity" value="{{ hero.dexterity }}" disabled>
+            </mat-form-field>
+            <mat-form-field class="field">
+                <input matInput placeholder="Inteligência (min: 0 / max: 10)" name="intelligence" value="{{ hero.intelligence }}" disabled>
+            </mat-form-field>
+        </section>
+    </form>
+
+    <mat-card-actions>
+        <button class="save-button" mat-raised-button (click)="deleteHero()" color="warn">
+            Deletar
+        </button>
+        
+        <button class="cancel-button" mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
+    </mat-card-actions>
+</mat-card>

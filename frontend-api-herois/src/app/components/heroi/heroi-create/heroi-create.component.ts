@@ -23,7 +23,6 @@ export class HeroiCreateComponent {
     this.heroiService.create(this.hero).subscribe(() => {
       this.heroiService.showMessage('Herói criado com sucesso!');
       this.router.navigate(['/herois'])
-      console.log(`${this.hero.name} and ${this.hero.race} `);
     })
   }
 

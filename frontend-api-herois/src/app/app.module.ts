@@ -25,7 +25,9 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HeroiReadComponent } from './components/heroi/heroi-read/heroi-read.component';
-import { MatTableModule } from '@angular/material/table'
+import { MatTableModule } from '@angular/material/table';
+import { HeroiUpdateComponent } from './components/heroi/heroi-update/heroi-update.component';
+import { HeroiDeleteComponent } from './components/heroi/heroi-delete/heroi-delete.component'
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { MatTableModule } from '@angular/material/table'
     HomeComponent,
     HeroiCrudComponent,
     HeroiCreateComponent,
-    HeroiReadComponent
+    HeroiReadComponent,
+    HeroiUpdateComponent,
+    HeroiDeleteComponent
   ],
   imports: [
     BrowserModule,

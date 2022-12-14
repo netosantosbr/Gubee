@@ -13,7 +13,7 @@ export class HeroiService {
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
-  showMessage(msg: string) {
+  showMessage(msg: string): void {
     this.snackBar.open(msg, 'X', {
       duration: 3000,
       horizontalPosition: "right",
@@ -22,10 +22,24 @@ export class HeroiService {
   }
 
   create(hero: Hero): Observable<Hero> {
-    return this.http.post<Hero>(this.baseUrl, hero)
+    return this.http.post<Hero>(this.baseUrl, hero);
   }
 
   readAll(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.baseUrl+"/findAll")
+    return this.http.get<Hero[]>(`${this.baseUrl}/findAll`);
+  }
+
+  readById(id: string): Observable<Hero> {
+    return this.http.get<Hero>(`${this.baseUrl}/${id}`);
+  }
+
+  update(hero: Hero): Observable<Hero> {
+    const updateUrl = `${this.baseUrl}/${hero.id}`;
+    return this.http.put<Hero>(updateUrl, hero);
+  }
+
+  delete(id: string): Observable<Hero> {
+    const deleteUrl = `${this.baseUrl}/${id}`;
+    return this.http.delete<Hero>(deleteUrl);
   }
 }
