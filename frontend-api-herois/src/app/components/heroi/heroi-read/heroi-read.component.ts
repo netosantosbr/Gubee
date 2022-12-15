@@ -17,7 +17,6 @@ export class HeroiReadComponent {
   ngOnInit() {
     this.heroiService.readAll().subscribe(heroes => {
       this.heroes = heroes;
-      console.log(heroes);
     })
   }
 }

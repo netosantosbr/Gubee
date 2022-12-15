@@ -27,7 +27,9 @@ import { MatInputModule } from '@angular/material/input';
 import { HeroiReadComponent } from './components/heroi/heroi-read/heroi-read.component';
 import { MatTableModule } from '@angular/material/table';
 import { HeroiUpdateComponent } from './components/heroi/heroi-update/heroi-update.component';
-import { HeroiDeleteComponent } from './components/heroi/heroi-delete/heroi-delete.component'
+import { HeroiDeleteComponent } from './components/heroi/heroi-delete/heroi-delete.component';
+import { HeroiCompareComponent } from './components/heroi/heroi-compare/heroi-compare.component'
+import { MatSelectModule } from '@angular/material/select'
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { HeroiDeleteComponent } from './components/heroi/heroi-delete/heroi-dele
     HeroiCreateComponent,
     HeroiReadComponent,
     HeroiUpdateComponent,
-    HeroiDeleteComponent
+    HeroiDeleteComponent,
+    HeroiCompareComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,8 @@ import { HeroiDeleteComponent } from './components/heroi/heroi-delete/heroi-dele
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

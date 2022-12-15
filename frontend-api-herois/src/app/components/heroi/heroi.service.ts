@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http'
 import { Hero } from './heroi.model';
 import { Observable } from 'rxjs';
+import { HeroCompare } from './heroi-compare.model';
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +42,16 @@ export class HeroiService {
   delete(id: string): Observable<Hero> {
     const deleteUrl = `${this.baseUrl}/${id}`;
     return this.http.delete<Hero>(deleteUrl);
+  }
+
+  compare(id: string, id2: string): Observable<HeroCompare> {
+    const compareUrl = `${this.baseUrl}/compare?firstId=${id}&secondId=${id2}`;
+    return this.http.get<HeroCompare>(compareUrl);
+  } 
+
+  readByName(name: string): Observable<Hero[]> {
+    name = (name == null || name == '') ? 'undefinedName' : name;
+    const readByNameUrl = `${this.baseUrl}?name=${name}`
+    return this.http.get<Hero[]>(readByNameUrl);
   }
 }

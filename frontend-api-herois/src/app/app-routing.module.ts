@@ -6,6 +6,7 @@ import { HeroiCrudComponent } from './views/heroi-crud/heroi-crud.component';
 import { HeroiCreateComponent } from './components/heroi/heroi-create/heroi-create.component' ;
 import { HeroiUpdateComponent } from './components/heroi/heroi-update/heroi-update.component';
 import { HeroiDeleteComponent } from './components/heroi/heroi-delete/heroi-delete.component';
+import { HeroiCompareComponent } from './components/heroi/heroi-compare/heroi-compare.component';
 
 const routes: Routes = [{
   path: "",
@@ -22,6 +23,9 @@ const routes: Routes = [{
 }, {
   path: "herois/delete/:id",
   component: HeroiDeleteComponent
+}, {
+  path: "herois/compare/:id/:id2",
+  component: HeroiCompareComponent
 }];
 
 @NgModule({

@@ -1,0 +1,24 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.field {
+    max-width: 600px;
+    margin-right: 10px;
+}
+
+.card {
+    padding: 10px;
+    max-width: 600px
+}
+
+mat-card-actions > button {
+    margin-right: 10px;
+}
+
+section{
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

@@ -1,0 +1,31 @@
+<mat-card class="card">
+    <mat-card-title>Comparação dos Heróis: {{firstHero.name}} and {{secondHero.name}}</mat-card-title>
+    <form>
+        <mat-form-field class="field">
+            <input matInput placeholder="ID Hero #01" [(ngModel)]="heroCompare.first_hero_id" name="firstId" disabled>
+        </mat-form-field>
+        <mat-form-field class="field">
+            <input matInput placeholder="ID Hero #02" [(ngModel)]="heroCompare.second_hero_id" name="secondId" disabled>
+        </mat-form-field>
+        <section>
+            <mat-form-field class="field">
+                <input matInput type="number" placeholder="Strength Difference" [(ngModel)]="heroCompare.strength_difference" name="strengthDiff" disabled>
+            </mat-form-field>
+            <mat-form-field class="field">
+                <input matInput type="number" placeholder="Agility Difference" [(ngModel)]="heroCompare.agility_difference" name="agilityDiff" disabled>
+            </mat-form-field>
+            <mat-form-field class="field">
+                <input matInput type="number" placeholder="Dexterity Difference" [(ngModel)]="heroCompare.dexterity_difference" name="dexterityDiff" disabled>
+            </mat-form-field>
+            <mat-form-field class="field">
+                <input matInput type="number" placeholder="Intelligence Difference" [(ngModel)]="heroCompare.intelligence_difference" name="intelligenceDiff" disabled>
+            </mat-form-field>
+        </section>
+    </form>
+
+    <mat-card-actions>
+        <button class="cancel-button" mat-raised-button (click)="finalizarComparacao()">
+            Finalizar comparação
+        </button>
+    </mat-card-actions>
+</mat-card>

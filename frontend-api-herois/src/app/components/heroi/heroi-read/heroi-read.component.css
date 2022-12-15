@@ -1,3 +1,13 @@
+div {
+    max-width: min-content;
+}
+
+
+table td {
+    width: auto;
+    white-space:nowrap;
+}
+
 table th{
     font-weight: 800;
 }

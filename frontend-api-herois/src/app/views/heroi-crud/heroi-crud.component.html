@@ -1,5 +1,89 @@
-<button mat-raised-button (click)="navigateToHeroCreate()" color="primary">
+<button id="btn-new-hero" mat-raised-button (click)="navigateToHeroCreate()" color="primary">
     Novo Herói
 </button>
+<mat-form-field class="field-nome">
+    <input class="mat-input-nome" matInput placeholder="Nome/ID" [(ngModel)]="searchedValue" name="secondId" required height="50px">
+</mat-form-field>
+<mat-form-field class="field">
+    <mat-select placeholder="Tipo de Busca" [(value)]="searchType" required>
+        <mat-option value="ID">ID</mat-option>
+        <mat-option value="NAME">NAME</mat-option>
+    </mat-select>
+</mat-form-field>
+<button id="btn-search-by-name" mat-raised-button (click)="search()" color="secondary">
+    Buscar
+</button>
+<button id="btn-erase-search" mat-raised-button (click)="eraseSearch()" color="warn">
+    Limpar busca
+</button>
 
-<app-heroi-read></app-heroi-read>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="heroes" [style.display]="isVisibleSearchTable ? 'block' : 'none'">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>ID</th>
+            <td mat-cell *matCellDef="let hero">{{ hero.id }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Nome</th>
+            <td mat-cell *matCellDef="let hero">{{ hero.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="race">
+            <th mat-header-cell *matHeaderCellDef>Raça</th>
+            <td mat-cell *matCellDef="let hero">{{ hero.race }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="strength">
+            <th mat-header-cell *matHeaderCellDef>Força</th>
+            <td mat-cell *matCellDef="let hero">{{ hero.strength }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="agility">
+            <th mat-header-cell *matHeaderCellDef>Agilidade</th>
+            <td mat-cell *matCellDef="let hero">{{ hero.agility }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="dexterity">
+            <th mat-header-cell *matHeaderCellDef>Destreza</th>
+            <td mat-cell *matCellDef="let hero">{{ hero.dexterity }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="intelligence">
+            <th mat-header-cell *matHeaderCellDef>Inteligência</th>
+            <td mat-cell *matCellDef="let hero">{{ hero.intelligence }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Ações</th>
+            <td mat-cell *matCellDef="let hero">
+                <a routerLink="/herois/update/{{ hero.id }}">
+                    <i class="material-icons edit">
+                        edit
+                    </i>
+                </a>
+                <a routerLink="/herois/delete/{{ hero.id }}">
+                    <i class="material-icons delete">
+                        delete
+                    </i>
+                </a>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+
+<app-heroi-read [style.display]="isVisibleTrueTable ? 'block' : 'none'"></app-heroi-read>
+
+<mat-form-field class="field">
+    <input matInput placeholder="Primeiro ID" [(ngModel)]="firstId" name="firstId" required>
+</mat-form-field>
+<mat-form-field class="field">
+    <input matInput placeholder="Segundo ID" [(ngModel)]="secondId" name="secondId" required>
+</mat-form-field>
+
+<button class="btn-comparar" class="compare-button" mat-raised-button (click)="navigateToHeroComparison()" color="primary">
+    Comparar
+</button>

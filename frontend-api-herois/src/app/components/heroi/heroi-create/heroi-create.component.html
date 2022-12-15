@@ -4,9 +4,16 @@
         <mat-form-field class="field">
             <input matInput placeholder="Nome" [(ngModel)]="hero.name" name="name">
         </mat-form-field>
+
         <mat-form-field class="field">
-            <input matInput placeholder="Raça" [(ngModel)]="hero.race" name="race">
+            <mat-select placeholder="Raça" [(value)]="hero.race">
+                <mat-option value="HUMAN">HUMAN</mat-option>
+                <mat-option value="ALIEN">ALIEN</mat-option>
+                <mat-option value="DIVINE">DIVINE</mat-option>
+                <mat-option value="CYBORG">CYBORG</mat-option>
+            </mat-select>
         </mat-form-field>
+
         <section>
             <mat-form-field class="field">
                 <input matInput type="number" placeholder="Força (min: 0 / max: 10)" [(ngModel)]="hero.strength" name="strength" min="0" max="10">
