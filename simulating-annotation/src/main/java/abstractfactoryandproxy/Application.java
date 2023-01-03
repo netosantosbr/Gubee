@@ -1,4 +1,4 @@
-package newtry;
+package abstractfactoryandproxy;
 
 public class Application {
     public static void main(String[] args) {

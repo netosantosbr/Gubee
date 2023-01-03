@@ -1,4 +1,4 @@
-package newtry;
+package abstractfactoryandproxy;
 
 public enum FactoryEnum {
     PROXY(new UserFactoryProxy()), NON_PROXY(new UserFactory());

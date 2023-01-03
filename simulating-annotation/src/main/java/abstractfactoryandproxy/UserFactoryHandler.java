@@ -1,4 +1,4 @@
-package newtry;
+package abstractfactoryandproxy;
 
 public class UserFactoryHandler {
     public static AbstractUserFactory create() {

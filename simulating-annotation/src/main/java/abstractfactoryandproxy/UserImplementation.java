@@ -1,4 +1,4 @@
-package newtry;
+package abstractfactoryandproxy;
 
 public class UserImplementation implements User {
     private String login;
