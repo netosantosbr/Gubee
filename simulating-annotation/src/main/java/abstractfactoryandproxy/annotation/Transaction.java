@@ -1,4 +1,4 @@
-package annotation;
+package abstractfactoryandproxy.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
