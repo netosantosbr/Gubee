@@ -102,3 +102,14 @@ dist
 
 # TernJS port file
 .tern-port
+
+
+cat ~/.gitignore
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.logs
+*.iml
+.idea/
