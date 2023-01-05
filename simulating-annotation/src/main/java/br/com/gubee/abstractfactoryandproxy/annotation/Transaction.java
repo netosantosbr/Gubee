@@ -1,4 +1,4 @@
-package abstractfactoryandproxy.annotation;
+package br.com.gubee.abstractfactoryandproxy.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,13 +1,12 @@
-package abstractfactoryandproxy.proxy;
+package br.com.gubee.abstractfactoryandproxy.proxy;
 
-import abstractfactoryandproxy.model.ProxyUser;
-import abstractfactoryandproxy.model.User;
+import br.com.gubee.abstractfactoryandproxy.annotation.Transaction;
+import br.com.gubee.abstractfactoryandproxy.model.User;
 
 import java.lang.reflect.Method;
-import abstractfactoryandproxy.annotation.Transaction;
 
 public class UserProxy implements User {
-    private ProxyUser realService;
+    private User realService;
 
     private void validateAnnotation(Method method, Runnable runnable) {
         try {
@@ -22,8 +21,8 @@ public class UserProxy implements User {
 
     }
 
-    public UserProxy(ProxyUser proxyUser) {
-        this.realService = proxyUser;
+    public UserProxy(User user) {
+        this.realService = user;
     }
 
     @Override
